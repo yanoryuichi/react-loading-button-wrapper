@@ -3,7 +3,7 @@
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
     "@mui/icons-material": "latest",
-    "@mui/lab": "latest",
+    "@mui/lab": "^5.0.0-alpha.141",
     "@mui/material": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
@@ -24,5 +24,17 @@
   },
   "keywords": [],
   "name": "react-loading-button-wrapper",
-  "version": "0.0.15"
+  "version": "0.0.15",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

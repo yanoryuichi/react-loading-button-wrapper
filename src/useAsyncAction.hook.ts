@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 export type ActionProps<R, I = undefined> = {
-  onExecute: (input?: I) => Promise<R>;
-  onSucceed?: (result: R) => void;
-  onFailure?: (error: any) => void;
+  onClick: (input?: I) => Promise<R>;
+  onSuccess?: (result: R) => void;
+  onFail?: (error: any) => void;
 };
 
 export type ActionResult<R, I = undefined> = {
@@ -26,14 +26,14 @@ export default function useAsyncAction<R, I = undefined>(
     setResult(undefined);
 
     config
-      .onExecute(input)
+      .onClick(input)
       .then((result: R) => {
         setResult(result);
-        if (config.onSucceed) config.onSucceed(result);
+        if (config.onSuccess) config.onSuccess(result);
       })
       .catch((error) => {
         setError(error);
-        if (config.onFailure) config.onFailure(error);
+        if (config.onFail) config.onFail(error);
       })
       .finally(() => setIsExecuting(false));
   };
